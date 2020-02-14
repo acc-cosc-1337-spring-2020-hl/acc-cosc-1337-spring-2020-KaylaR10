@@ -12,10 +12,13 @@ returns 120
 DON'T FORGET TO WRITE TEST CASE.  See file loop_test.cpp
 */
 int factorial(int num)
-{ int result = 1;
-for (int i = 1; i <= num; ++i) {
-    result *= i;
-}
+{ 
+	int result = 1;
+
+	for (int i = 1; i <= num; ++i) 
+	{
+		result *= i;
+	}
 
     return result;
 }
