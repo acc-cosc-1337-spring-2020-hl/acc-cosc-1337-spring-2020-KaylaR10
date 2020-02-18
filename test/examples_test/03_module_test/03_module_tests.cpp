@@ -22,12 +22,14 @@ TEST_CASE("Verify sum_of_squares function")
 	REQUIRE(sum_of_squares(5) == 55);
 }
 
-TEST_CASE("Test pass_by_value_and_ref function")
-{
-	int num1 = 5, num2 = 10;
-
+TEST_CASE("Test val and ref function") {
+	int num1 = 5; int num2 = 10;
 	pass_by_val_and_ref(num1, num2);
-
 	REQUIRE(num1 == 5);
 	REQUIRE(num2 == 50);
 }
+
+TEST_CASE("Test for range loop by ref") {
+	string name = "Joe";
+	loop_string_w_auto_ref(name);
+	REQUIRE(name == "zzz");
