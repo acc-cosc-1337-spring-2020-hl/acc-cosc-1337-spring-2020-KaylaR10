@@ -17,7 +17,7 @@ TEST_CASE("Test sum_of_squares function") {
 
 TEST_CASE("Test val and ref function") {
 	int num1 = 5; int num2 = 10;
-	pass_by_val_and_ref(num1, num2);
+	pass_by_val_and_ref(num1, &num2);
 	REQUIRE(num1 == 5);
 	REQUIRE(num2 == 50);
 }
