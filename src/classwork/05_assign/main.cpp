@@ -20,13 +20,14 @@ int main()
 {
     vector<Rectangle> Rectangles{ Rectangle(4,5), Rectangle(10,10), Rectangle(100,10) };
 
-    
+	auto total{ 0 };
 
     for (auto rect : Rectangles) {
         cout << rect.get_Area() << "\n";
-        
+		total += rect.get_Area();
     }
 
+	cout << "Area: " << total;
    
 
     return 0;
