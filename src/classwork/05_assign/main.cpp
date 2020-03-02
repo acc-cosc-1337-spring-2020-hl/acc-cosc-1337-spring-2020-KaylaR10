@@ -18,7 +18,7 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main()
 {
-    vector<Rectangle> Rectangles{ Rectangle(4,5), Rectangle(10,10), Rectangle(100,10) };
+    vector<Rectangl> Rectangles{ Rectangl(4,5), Rectangl(10,10), Rectangl(100,10) };
 
 	auto total{ 0 };
 
