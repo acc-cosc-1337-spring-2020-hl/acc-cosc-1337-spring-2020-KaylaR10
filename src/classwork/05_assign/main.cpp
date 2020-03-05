@@ -23,7 +23,7 @@ int main()
 	auto total{ 0 };
 
     for (auto rect : Rectangles) {
-        cout << rect.get_Area() << "\n";
+        cout << rect << "\n";
 		total += rect.get_Area();
     }
 
