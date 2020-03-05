@@ -15,3 +15,8 @@ int Rectangl::get_Area()
 {
     return area;
 }
+std::ostream & operator<<(std::ostream & out, const Rectangl & rec)
+{
+    out << "Area: " << rec.area;
+    return out;
+}
