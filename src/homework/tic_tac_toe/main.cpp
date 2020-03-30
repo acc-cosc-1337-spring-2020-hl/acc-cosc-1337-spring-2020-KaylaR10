@@ -9,6 +9,7 @@ int main()
     TicTacToe game;
     string player;
     int position;
+    string choice ="Y";
     
     cout<<"Enter Starting Player:";
     cin>>player;
@@ -21,6 +22,7 @@ int main()
         cout<<"\n";
         
         game.mark_board(position);
+        game.display_board();
         cout<<"\n";
     }
 
