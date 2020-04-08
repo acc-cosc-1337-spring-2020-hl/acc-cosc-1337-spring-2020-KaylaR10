@@ -7,24 +7,58 @@ using std::cin;
 int main() 
 {
     TicTacToe game;
+    string choice = "Q";
     string player;
     int position;
-    string choice ="Y";
-    
-    cout<<"Enter Starting Player:";
-    cin>>player;
-    
-    game.start_game(player);
-    
+while (choice != "Q")
+{
+    do
     {
-        std::cout<<"Enter postion player"<< game.get_player()<<":";
+        try
+        {
+            cout<<"Enter Starting Player (Choose X or O):";
+            cin>>player;
+            game.start_game(player);
+            
+        }
+        catch (Error exc)
+        {
+            cout << exc.get_message();
+            
+        }
+}
+   
+    
+    
+    while(player != "X" || player != "O");
+    
+    do
+    {
+        std::cout<<"Enter position (Chose a number 1-9)"<< game.get_player()<<":";
         cin>>position;
         cout<<"\n";
         
-        game.mark_board(position);
-        game.display_board();
-        cout<<"\n";
+        try
+        {
+            game.mark_board(position);
+           
+            cout<<"\n";
+        }
+        catch (Error exc)
+        {
+            cout << exc.get_message();
+        }
+         game.display_board();
     }
-
-	return 0;
+    while (!(game.game_over()== true));
+        cout << "The winner is:" << game.get_winner()<<"\n";
+        cout << "Enter Q to quit:";
+        cin >> choice;
+       
+     
+    
+    
+    }
+   
+    return 0;
 }
