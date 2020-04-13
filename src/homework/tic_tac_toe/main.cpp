@@ -7,30 +7,32 @@ using std::cin;
 int main() 
 {
     TicTacToe game;
-    string choice = "Q";
-    string player;
+    string choice = "Z";
+    
     int position;
-while (choice != "Q")
-{
     do
     {
-        try
-        {
-            cout<<"Enter Starting Player (Choose X or O):";
-            cin>>player;
-            game.start_game(player);
-            
-        }
-        catch (Error exc)
-        {
-            cout << exc.get_message();
-            
-        }
-}
+		string player;
+		while (!(player == "X" || player == "O"))
+		{
+			try
+			{
+				cout << "Enter Starting Player (Choose X or O):";
+				cin >> player;
+				game.start_game(player);
+
+			}
+			catch (Error exc)
+			{
+				cout << exc.get_message();
+
+			}
+		}
+
    
     
     
-    while(player != "X" || player != "O");
+    
     
     do
     {
@@ -58,7 +60,7 @@ while (choice != "Q")
      
     
     
-    }
+	} while (!(choice == "Q"));
    
     return 0;
 }

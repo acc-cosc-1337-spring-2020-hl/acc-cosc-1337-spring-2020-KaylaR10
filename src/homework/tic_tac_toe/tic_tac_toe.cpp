@@ -52,7 +52,7 @@ void TicTacToe::start_game(string first_player)
 //value of int must be in the range 1 to 9; otherwise throw and Error exception if value not in this range.
 void TicTacToe::mark_board(int position)
 {
-    if (position >= 1 || position <= 9)
+    if (position < 1 || position > 9)
     {
         throw Error("Position must be 1 to 9."); //Error message
     }
@@ -69,22 +69,10 @@ void TicTacToe::mark_board(int position)
 //Iterate vector of string pegs to display a tic tac toe board in 3X3 format
 void TicTacToe::display_board() const
 {
-    string out = "";
-    for (int i = 0; i < 9; i++)
-    {
-        if (i % 3 != 0)
-        {
-            out +=" | ";
-            
-        }
-        else if (i/3>0)
-        {
-            out +="    ";
-            
-        }
-        out += pegs[i];
-    }
-    std::cout << out;
+	for (int i = 0; i < 9; i += 3)
+	{
+		std::cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+	}
 }
 
 //return false if vector of strings pegs has available slot by checking for a space in each element. Otherwise return true
