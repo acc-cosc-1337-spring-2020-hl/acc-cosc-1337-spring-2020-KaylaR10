@@ -63,7 +63,11 @@ void TicTacToe::mark_board(int position)
     else
      {
          pegs[position - 1] = player;
-         set_next_player();
+         if(!game_over())
+         {
+             set_next_player();
+             
+         }
      }
 }
 //Iterate vector of string pegs to display a tic tac toe board in 3X3 format
